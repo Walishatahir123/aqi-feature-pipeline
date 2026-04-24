@@ -1,0 +1,68 @@
+[
+  {
+    "timestamp": "2026-04-24T13:51:10.496868+00:00",
+    "stage": "stage1",
+    "status": "success",
+    "detail": "data\\raw\\raw_20260424_135110.json"
+  },
+  {
+    "timestamp": "2026-04-24T13:51:10.650551+00:00",
+    "stage": "stage2",
+    "status": "error",
+    "detail": "table features has no column named aqi_lag_1h"
+  },
+  {
+    "timestamp": "2026-04-24T13:52:27.635297+00:00",
+    "stage": "stage1",
+    "status": "success",
+    "detail": "data\\raw\\raw_20260424_135227.json"
+  },
+  {
+    "timestamp": "2026-04-24T13:52:27.733004+00:00",
+    "stage": "stage2",
+    "status": "success",
+    "detail": "data\\features\\features_2026-04-24.csv"
+  },
+  {
+    "timestamp": "2026-04-24T13:52:27.753667+00:00",
+    "stage": "stage3",
+    "status": "success",
+    "detail": "{\"hopsworks_upload\": false, \"csv_backup\": \"data\\\\features_store_backup\\\\feature_store_backup_2026-04-24.csv\", \"timestamp\": \"2026-04-24T13:52:27.742994+00:00\", \"feature_count\": 58}"
+  },
+  {
+    "timestamp": "2026-04-24T14:05:03.105471+00:00",
+    "stage": "stage1",
+    "status": "success",
+    "detail": "data\\raw\\raw_20260424_140502.json"
+  },
+  {
+    "timestamp": "2026-04-24T14:05:03.248717+00:00",
+    "stage": "stage2",
+    "status": "success",
+    "detail": "data\\features\\features_2026-04-24.csv"
+  },
+  {
+    "timestamp": "2026-04-24T14:05:03.305963+00:00",
+    "stage": "stage3",
+    "status": "success",
+    "detail": "{\"hopsworks_upload\": false, \"csv_backup\": \"data\\\\features_store_backup\\\\feature_store_backup_2026-04-24.csv\", \"timestamp\": \"2026-04-24T14:05:03.279058+00:00\", \"feature_count\": 59}"
+  },
+  {
+    "timestamp": "2026-04-24T14:43:42.354792+00:00",
+    "stage": "stage1",
+    "status": "success",
+    "detail": "data\\raw\\raw_20260424_144342.json"
+  },
+  {
+    "timestamp": "2026-04-24T14:43:42.499240+00:00",
+    "stage": "stage2",
+    "status": "success",
+    "detail": "data\\features\\features_2026-04-24.csv"
+  },
+  {
+    "timestamp": "2026-04-24T14:43:42.521692+00:00",
+    "stage": "stage3",
+    "status": "success",
+    "detail": "{\"hopsworks_upload\": false, \"csv_backup\": \"data\\\\features_store_backup\\\\feature_store_backup_2026-04-24.csv\", \"timestamp\": \"2026-04-24T14:43:42.508701+00:00\", \"feature_count\": 60}"
+  }
+]
