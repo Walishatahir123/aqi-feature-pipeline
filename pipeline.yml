@@ -1,4 +1,4 @@
-name: 🧠 AQI Feature Pipeline
+name: AQI Feature Pipeline
 
 on:
   schedule:
@@ -26,24 +26,24 @@ jobs:
         with:
           fetch-depth: 10           # need history for lag feature continuity
 
-      - name: 🐍 Set up Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: pip
 
-      - name: 📦 Install dependencies
+      - name: Install dependencies
         run: pip install -r requirements.txt
 
       # Restore persisted SQLite DB from cache (for lag features)
-      - name: 💾 Restore feature DB cache
+      - name: Restore feature DB cache
         uses: actions/cache@v4
         with:
           path: data/features.db
           key: features-db-${{ github.run_number }}
           restore-keys: features-db-
 
-      - name: 🚀 Run Feature Pipeline (all 3 stages)
+      - name: Run Feature Pipeline (all 3 stages)
         run: python run_pipeline.py
         env:
           CITY:              ${{ vars.CITY }}
@@ -54,7 +54,7 @@ jobs:
           HOPSWORKS_PROJECT: ${{ vars.HOPSWORKS_PROJECT }}
           PYTHONUNBUFFERED:  "1"
 
-      - name: 💾 Commit data to repo
+      - name: Commit data to repo
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -65,7 +65,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 📤 Upload artifacts
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: pipeline-output-${{ github.run_number }}
@@ -75,6 +75,6 @@ jobs:
             data/pipeline.log
           retention-days: 14
 
-      - name: ❌ On failure
+      - name: On failure
         if: failure()
         run: echo "Pipeline failed. Check logs above."

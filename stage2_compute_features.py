@@ -369,7 +369,7 @@ if __name__ == "__main__":
         snap = json.load(f)
 
     row, path = compute_features(snap["aqicn"], snap["openmeteo"])
-    print(f"\n✅ Stage 2 complete. Features saved to: {path}")
+    print(f"\n Stage 2 complete. Features saved to: {path}")
     print(f"   Feature count : {len(row)}")
     print(f"\n   Sample features:")
     for k in ["aqi", "pm25_iaqi", "temp_c", "hour", "hour_sin",
