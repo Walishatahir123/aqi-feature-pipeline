@@ -70,5 +70,23 @@
     "stage": "stage1",
     "status": "error",
     "detail": "AQICN error: Invalid key"
+  },
+  {
+    "timestamp": "2026-04-24T19:26:08.414609+00:00",
+    "stage": "stage1",
+    "status": "success",
+    "detail": "data\\raw\\raw_20260424_192608.json"
+  },
+  {
+    "timestamp": "2026-04-24T19:26:08.498885+00:00",
+    "stage": "stage2",
+    "status": "success",
+    "detail": "data\\features\\features_2026-04-25.csv"
+  },
+  {
+    "timestamp": "2026-04-24T19:26:08.516388+00:00",
+    "stage": "stage3",
+    "status": "success",
+    "detail": "{\"hopsworks_upload\": false, \"csv_backup\": \"data\\\\features_store_backup\\\\feature_store_backup_2026-04-25.csv\", \"timestamp\": \"2026-04-24T19:26:08.505377+00:00\", \"feature_count\": 58}"
   }
 ]
