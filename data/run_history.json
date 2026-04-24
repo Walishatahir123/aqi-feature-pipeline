@@ -64,5 +64,11 @@
     "stage": "stage3",
     "status": "success",
     "detail": "{\"hopsworks_upload\": false, \"csv_backup\": \"data\\\\features_store_backup\\\\feature_store_backup_2026-04-24.csv\", \"timestamp\": \"2026-04-24T14:43:42.508701+00:00\", \"feature_count\": 60}"
+  },
+  {
+    "timestamp": "2026-04-24T18:10:21.315498+00:00",
+    "stage": "stage1",
+    "status": "error",
+    "detail": "AQICN error: Invalid key"
   }
 ]

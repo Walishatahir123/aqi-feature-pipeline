@@ -186,4 +186,4 @@ def fetch_all() -> tuple[dict, dict, Path]:
 
 if __name__ == "__main__":
     a, m, p = fetch_all()
-    print(f"\n✅ Stage 1 complete. Raw data saved to: {p}")
+    print(f"\nStage 1 complete. Raw data saved to: {p}")

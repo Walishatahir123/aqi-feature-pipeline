@@ -60,8 +60,8 @@ def time_features(ts: datetime) -> dict:
     # Cyclic encoding (preserves circular distance, e.g. 23:00 close to 00:00)
     hour_sin      = math.sin(2 * math.pi * hour        / 24)
     hour_cos      = math.cos(2 * math.pi * hour        / 24)
-    dow_sin       = math.sin(2 * math.pi * day_of_week / 7)
-    dow_cos       = math.cos(2 * math.pi * day_of_week / 7)
+    # dow_sin       = math.sin(2 * math.pi * day_of_week / 7)
+    # dow_cos       = math.cos(2 * math.pi * day_of_week / 7)
     month_sin     = math.sin(2 * math.pi * month       / 12)
     month_cos     = math.cos(2 * math.pi * month       / 12)
     doy_sin       = math.sin(2 * math.pi * day_of_year / 365)
@@ -86,8 +86,8 @@ def time_features(ts: datetime) -> dict:
         "day_of_year":   day_of_year,
         "hour_sin":      round(hour_sin,  6),
         "hour_cos":      round(hour_cos,  6),
-        "dow_sin":       round(dow_sin,   6),
-        "dow_cos":       round(dow_cos,   6),
+        # "dow_sin":       round(dow_sin,   6),
+        # "dow_cos":       round(dow_cos,   6),
         "month_sin":     round(month_sin, 6),
         "month_cos":     round(month_cos, 6),
         "doy_sin":       round(doy_sin,   6),
