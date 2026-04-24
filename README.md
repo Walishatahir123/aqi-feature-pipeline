@@ -1,4 +1,4 @@
-# 🧠 AQI Feature Pipeline
+# AQI Feature Pipeline
 
 A 3-stage ML feature pipeline: **Fetch → Engineer → Store**, running hourly via GitHub Actions CI/CD.
 
