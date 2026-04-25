@@ -316,10 +316,14 @@ def save_features(row: dict) -> Path:
     csv_path = FEAT_DIR / f"features_{date_str}.csv"
     df       = pd.DataFrame([row])
 
+    # if csv_path.exists():
+    #     df.to_csv(csv_path, mode="a", header=False, index=False)
+    # else:
+    #     df.to_csv(csv_path, index=False)
     if csv_path.exists():
-        df.to_csv(csv_path, mode="a", header=False, index=False)
+        df.to_csv(csv_path, mode="a", header=False, index=False, quoting=1)
     else:
-        df.to_csv(csv_path, index=False)
+        df.to_csv(csv_path, index=False, quoting=1)
 
     log.info(f"Features saved → {csv_path}")
 
