@@ -1,3 +1,4 @@
+Set-Content .github/workflows/pipeline.yml @"
 name: AQI Pipeline
 on:
   schedule:
@@ -17,14 +18,14 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run Stage 1
         env:
-          AQICN_API_KEY: ${{ secrets.DEMO }}
+          AQICN_API_KEY: `${{ secrets.DEMO }}
         run: python stage1_fetch_raw.py
       - name: Run Stage 2
         run: python stage2_compute_features.py
       - name: Run Stage 3
         env:
-          HOPSWORKS_API_KEY: ${{ secrets.Hopsworks_api }}
-          HOPSWORKS_PROJECT: ${{ secrets.HOPSWORKS_PROJECT }}
+          HOPSWORKS_API_KEY: `${{ secrets.Hopsworks_api }}
+          HOPSWORKS_PROJECT: `${{ secrets.HOPSWORKS_PROJECT }}
         run: python stage3_store_features.py
       - name: Commit and push
         run: |
@@ -33,3 +34,4 @@ jobs:
           git add data/features/ data/raw/ data/features_store_backup/
           git diff --staged --quiet || git commit -m "auto: hourly AQI update"
           git push
+"@
