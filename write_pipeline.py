@@ -1,0 +1,41 @@
+content = """name: AQI Pipeline
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run Stage 1
+        env:
+          AQICN_API_KEY: ${{ secrets.DEMO }}
+        run: python stage1_fetch_raw.py
+      - name: Run Stage 2
+        run: python stage2_compute_features.py
+      - name: Run Stage 3
+        env:
+          HOPSWORKS_API_KEY: ${{ secrets.Hopsworks_api }}
+          HOPSWORKS_PROJECT: ${{ secrets.HOPSWORKS_PROJECT }}
+        run: python stage3_store_features.py
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/features/ data/raw/ data/features_store_backup/
+          git diff --staged --quiet || git commit -m "auto: hourly AQI update"
+          git push
+"""
+
+with open(".github/workflows/pipeline.yml", "w") as f:
+    f.write(content)
+
+print("Done! pipeline.yml written successfully.")
