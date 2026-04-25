@@ -299,7 +299,7 @@ if __name__ == "__main__":
 
     # df  = pd.read_csv(feat_files[-1])
     # df = pd.read_csv(feat_files[-1], on_bad_lines='warn')
-    df = pd.read_csv(feat_files[-1], on_bad_lines='skip')
+    df = pd.read_csv(feat_files[-1], on_bad_lines='skip', engine='python')
     row = df.iloc[-1].to_dict()
 
     status = store_features(row)

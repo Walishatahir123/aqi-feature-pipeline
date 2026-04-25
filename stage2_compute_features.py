@@ -321,9 +321,9 @@ def save_features(row: dict) -> Path:
     # else:
     #     df.to_csv(csv_path, index=False)
     if csv_path.exists():
-        df.to_csv(csv_path, mode="a", header=False, index=False, quoting=1)
+        df.to_csv(csv_path, mode="a", header=False, index=False, quoting=1, quotechar='"')
     else:
-        df.to_csv(csv_path, index=False, quoting=1)
+        df.to_csv(csv_path, index=False, quoting=1, quotechar='"')
 
     log.info(f"Features saved → {csv_path}")
 
