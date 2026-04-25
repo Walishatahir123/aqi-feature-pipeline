@@ -2,7 +2,7 @@ name: AQI Pipeline
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: "0 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -16,20 +16,20 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.13'
+          python-version: "3.13"
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run Stage 1 — Fetch Raw Data
+      - name: Run Stage 1 - Fetch Raw Data
         env:
           AQICN_API_KEY: ${{ secrets.DEMO }}
         run: python stage1_fetch_raw.py
 
-      - name: Run Stage 2 — Compute Features
+      - name: Run Stage 2 - Compute Features
         run: python stage2_compute_features.py
 
-      - name: Run Stage 3 — Store Features
+      - name: Run Stage 3 - Store Features
         env:
           HOPSWORKS_API_KEY: ${{ secrets.Hopsworks_api }}
           HOPSWORKS_PROJECT: ${{ secrets.HOPSWORKS_PROJECT }}
