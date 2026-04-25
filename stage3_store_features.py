@@ -303,11 +303,11 @@ if __name__ == "__main__":
     row = df.iloc[-1].to_dict()
 
     status = store_features(row)
-    print(f"\n✅ Stage 3 complete.")
+    print(f"\nStage 3 complete.")
     print(f"   Hopsworks: {'✅' if status['hopsworks_upload'] else '⚠️  skipped (set HOPSWORKS_API_KEY)'}")
     print(f"   CSV backup: {status['csv_backup']}")
 
     store_info = check_feature_store_status()
-    print(f"\n📦 Feature Store Status:")
+    print(f"\n Feature Store Status:")
     for k, v in store_info.items():
         print(f"   {k:20s} = {v}")
