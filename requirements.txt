@@ -3,3 +3,4 @@ numpy
 requests
 python-dotenv
 hopsworks
+pywin32==311; sys_platform == "win32"
