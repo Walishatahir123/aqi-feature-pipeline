@@ -297,7 +297,8 @@ if __name__ == "__main__":
         print("No feature CSV found. Run stage2_compute_features.py first.")
         exit(1)
 
-    df  = pd.read_csv(feat_files[-1])
+    # df  = pd.read_csv(feat_files[-1])
+    df = pd.read_csv(feat_files[-1], on_bad_lines='warn')
     row = df.iloc[-1].to_dict()
 
     status = store_features(row)
