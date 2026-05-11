@@ -45,12 +45,12 @@ def log_run(stage: str, status: str, detail: str):
 def run():
     start = datetime.now()
     log.info("=" * 60)
-    log.info("🚀 Feature Pipeline Starting")
+    log.info(" Feature Pipeline Starting")
     log.info("=" * 60)
 
     # ── Stage 1: Fetch Raw ──────────────────────────────────────────────
     try:
-        log.info("\n📡 STAGE 1: Fetching raw data...")
+        log.info("\n STAGE 1: Fetching raw data...")
         aqicn_data, meteo_data, raw_path = fetch_all()
         log_run("stage1", "success", str(raw_path))
         log.info(f"   Raw data → {raw_path}")
@@ -61,7 +61,7 @@ def run():
 
     # ── Stage 2: Compute Features ───────────────────────────────────────
     try:
-        log.info("\n⚙️  STAGE 2: Computing features...")
+        log.info("\n  STAGE 2: Computing features...")
         features, feat_path = compute_features(aqicn_data, meteo_data)
         log_run("stage2", "success", str(feat_path))
         log.info(f"   Features ({len(features)}) → {feat_path}")
@@ -72,7 +72,7 @@ def run():
 
     # ── Stage 3: Store ──────────────────────────────────────────────────
     try:
-        log.info("\n🗄️  STAGE 3: Storing in Feature Store...")
+        log.info("\n  STAGE 3: Storing in Feature Store...")
         status = store_features(features)
         log_run("stage3", "success", json.dumps(status))
     except Exception as e:
@@ -84,14 +84,14 @@ def run():
 
     # ── Summary ─────────────────────────────────────────────────────────
     log.info("\n" + "=" * 60)
-    log.info("✅ Pipeline completed successfully")
+    log.info(" Pipeline completed successfully")
     log.info(f"   Duration     : {elapsed:.1f}s")
     log.info(f"   AQI          : {features.get('aqi')} ({features.get('aqi_cat_label')})")
     log.info(f"   PM2.5        : {features.get('pm25_iaqi')}")
     log.info(f"   Temp         : {features.get('temp_c')}°C")
     log.info(f"   AQI change/h : {features.get('aqi_change_rate_1h', 'N/A (first run)')}")
     log.info(f"   Trend target : {features.get('target_trend_direction')}")
-    log.info(f"   Feature store: {'Hopsworks ✅' if status['hopsworks_upload'] else 'CSV only ⚠️'}")
+    log.info(f"   Feature store: {'MongoDB ✅' if status['mongodb_upload'] else 'CSV only ⚠️'}")
     log.info("=" * 60)
 
     fs_info = check_feature_store_status()
