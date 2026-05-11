@@ -1,3 +1,7 @@
+- name: Clean old CSVs
+        run: |
+          rm -rf data/features/*.csv
+          rm -rf data/features_store_backup/*.csv
 name: AQI Feature Pipeline
 
 on:
