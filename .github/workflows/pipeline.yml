@@ -23,8 +23,7 @@ jobs:
         run: python stage2_compute_features.py
       - name: Run Stage 3
         env:
-          HOPSWORKS_API_KEY: ${{ secrets.Hopsworks_api }}
-          HOPSWORKS_PROJECT: ${{ secrets.HOPSWORKS_PROJECT }}
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: python stage3_store_features.py
       - name: Commit and push
         run: |
