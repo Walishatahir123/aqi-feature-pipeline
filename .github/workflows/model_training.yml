@@ -1,0 +1,67 @@
+name:  Daily Model Training
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # Every day at 2:00 AM UTC
+  workflow_dispatch:        # Allow manual trigger from GitHub UI
+
+jobs:
+  train-model:
+    name: Train & Register AQI Model
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      # ── 1. Checkout code ────────────────────────────────────────────────
+      - name:  Checkout Repository
+        uses: actions/checkout@v4
+
+      # ── 2. Setup Python ─────────────────────────────────────────────────
+      - name:  Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # ── 3. Install dependencies ─────────────────────────────────────────
+      - name:  Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install xgboost lightgbm scikit-learn pymongo[srv] pandas numpy joblib
+
+      # ── 4. Run training script ───────────────────────────────────────────
+      - name: 🤖 Train AQI Model
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        run: |
+          echo " Training started at $(date -u)"
+          python stage4_train_model.py
+          echo " Training complete"
+
+      # ── 5. Upload trained model as artifact ─────────────────────────────
+      - name: 📤 Upload Model Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: aqi-model-${{ github.run_number }}-${{ github.run_attempt }}
+          path: |
+            aqi_model_outputs/aqi_xgb_model.pkl
+            aqi_model_outputs/imputer.pkl
+            aqi_model_outputs/scaler.pkl
+            aqi_model_outputs/feature_cols.json
+            aqi_model_outputs/model_comparison.csv
+          retention-days: 30
+
+      # ── 6. Save model report as summary ─────────────────────────────────
+      - name:  Post Model Results to Summary
+        if: always()
+        run: |
+          echo "##  AQI Model Training Report" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "**Run:** #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          if [ -f aqi_model_outputs/model_comparison.csv ]; then
+            echo "### Model Comparison" >> $GITHUB_STEP_SUMMARY
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+            cat aqi_model_outputs/model_comparison.csv >> $GITHUB_STEP_SUMMARY
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          fi

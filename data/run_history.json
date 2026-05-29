@@ -88,5 +88,23 @@
     "stage": "stage3",
     "status": "success",
     "detail": "{\"hopsworks_upload\": false, \"csv_backup\": \"data\\\\features_store_backup\\\\feature_store_backup_2026-04-25.csv\", \"timestamp\": \"2026-04-24T19:26:08.505377+00:00\", \"feature_count\": 58}"
+  },
+  {
+    "timestamp": "2026-05-11T10:43:47.599237+00:00",
+    "stage": "stage1",
+    "status": "success",
+    "detail": "data\\raw\\raw_20260511_104347.json"
+  },
+  {
+    "timestamp": "2026-05-11T10:43:47.859601+00:00",
+    "stage": "stage2",
+    "status": "success",
+    "detail": "data\\features\\features_2026-05-11.csv"
+  },
+  {
+    "timestamp": "2026-05-11T10:43:48.034764+00:00",
+    "stage": "stage3",
+    "status": "success",
+    "detail": "{\"mongodb_upload\": false, \"csv_backup\": \"data\\\\features_store_backup\\\\feature_store_backup_2026-05-11.csv\", \"timestamp\": \"2026-05-11T10:43:47.955286+00:00\", \"feature_count\": 61}"
   }
 ]

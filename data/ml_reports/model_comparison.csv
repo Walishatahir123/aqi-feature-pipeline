@@ -1,0 +1,7 @@
+Model,RMSE,MAE,R2,Windows
+1. Ridge Regression,0.0002,0.0001,1.0,1
+2. Lasso Regression,0.0018,0.0008,1.0,1
+3. Decision Tree,1.1547,0.6667,0.9286,1
+4. Random Forest,0.3548,0.2144,0.9933,1
+5. XGBoost,0.4723,0.4024,0.9881,1
+6. Gradient Boosting,0.4366,0.3018,0.9898,1

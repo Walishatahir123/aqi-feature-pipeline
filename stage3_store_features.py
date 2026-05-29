@@ -1,4 +1,5 @@
-
+from dotenv import load_dotenv
+load_dotenv()  # ← this reads your .env file
 import os
 import logging
 import pandas as pd

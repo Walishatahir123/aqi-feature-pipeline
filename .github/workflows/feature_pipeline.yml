@@ -1,0 +1,52 @@
+name:  Hourly Feature Pipeline
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # Every hour at :00
+  workflow_dispatch:        # Allow manual trigger from GitHub UI
+
+jobs:
+  run-feature-pipeline:
+    name: Fetch & Store Features
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # ── 1. Checkout code ────────────────────────────────────────────────
+      - name:  Checkout Repository
+        uses: actions/checkout@v4
+
+      # ── 2. Setup Python ─────────────────────────────────────────────────
+      - name:  Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # ── 3. Install dependencies ─────────────────────────────────────────
+      - name:  Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ── 4. Run feature script ────────────────────────────────────────────
+      - name: ⚙️ Run Feature Pipeline (Stage 1 → Stage 3)
+        env:
+          MONGODB_URI:    ${{ secrets.MONGODB_URI }}
+          WAQI_TOKEN:     ${{ secrets.WAQI_TOKEN }}
+          OPENWEATHER_KEY: ${{ secrets.OPENWEATHER_KEY }}
+        run: |
+          echo " Running at $(date -u)"
+          python stage1_fetch_data.py     || echo " stage1 failed"
+          python stage2_compute_features.py || echo " stage2 failed"
+          python stage3_store_features.py   || echo " stage3 failed"
+          echo " Feature pipeline complete"
+
+      # ── 5. Upload CSV backup as artifact ────────────────────────────────
+      - name: Upload Feature Backup
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: feature-backup-${{ github.run_number }}
+          path: data/features_store_backup/
+          retention-days: 7

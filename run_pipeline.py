@@ -91,11 +91,11 @@ def run():
     log.info(f"   Temp         : {features.get('temp_c')}°C")
     log.info(f"   AQI change/h : {features.get('aqi_change_rate_1h', 'N/A (first run)')}")
     log.info(f"   Trend target : {features.get('target_trend_direction')}")
-    log.info(f"   Feature store: {'MongoDB ✅' if status['mongodb_upload'] else 'CSV only ⚠️'}")
+    log.info(f"   Feature store: {'MongoDB ' if status['mongodb_upload'] else 'CSV only '}")
     log.info("=" * 60)
 
     fs_info = check_feature_store_status()
-    log.info(f"\n📦 Feature Store: {fs_info['total_rows']} total rows, "
+    log.info(f"\n Feature Store: {fs_info['total_rows']} total rows, "
              f"{fs_info['feature_count']} features, "
              f"backend={fs_info['backend']}")
 
