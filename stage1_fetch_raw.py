@@ -1,10 +1,4 @@
-"""
-STAGE 1 — Raw Data Fetcher
-APIs:
-  - AQICN  (https://aqicn.org/api/)       → AQI + Pollutants  [free, token needed]
-  - Open-Meteo (https://open-meteo.com/)  → Weather           [free, no key]
-Outputs raw JSON snapshots to  data/raw/  folder.
-"""
+
 
 import os
 import json
