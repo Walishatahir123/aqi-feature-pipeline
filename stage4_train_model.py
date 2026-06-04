@@ -1,13 +1,3 @@
-"""
-stage4_train_model.py
-─────────────────────
-Daily training script:
-  1. Load features from MongoDB
-  2. Train XGBoost model
-  3. Evaluate & compare with previous best
-  4. Save model files locally
-  5. Register model metadata in MongoDB Model Registry
-"""
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -28,6 +18,10 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import LabelEncoder
 from xgboost import XGBRegressor
+from sklearn.impute import SimpleImputer
+import joblib
+
+
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 log = logging.getLogger(__name__)
@@ -183,7 +177,7 @@ if __name__ == "__main__":
     register_model(metrics, feat_cols)
 
     log.info("=" * 50)
-    log.info("Stage 4 Complete ✅")
+    log.info("Stage 4 Complete ")
     log.info(f"  MAE  : {metrics['mae']}")
     log.info(f"  RMSE : {metrics['rmse']}")
     log.info(f"  R²   : {metrics['r2']}")
