@@ -1,7 +1,18 @@
+# pandas
+# numpy
+# requests
+# python-dotenv
+# hopsworks
+# pywin32==311; sys_platform == "win32"
+# pymongo[srv]
+
+streamlit
 pandas
 numpy
-requests
-python-dotenv
-hopsworks
-pywin32==311; sys_platform == "win32"
+plotly
 pymongo[srv]
+scikit-learn
+xgboost
+joblib
+shap
+python-dotenv
