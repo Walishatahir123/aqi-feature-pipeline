@@ -1,15 +1,4 @@
-"""
-STAGE 2 — Feature Engineering
-Transforms raw API snapshots into ML-ready features + targets.
 
-Feature Groups:
-  A. Time-based      : hour, day_of_week, month, season, is_weekend, is_peak_hour
-  B. Weather         : temp, humidity, wind, UV, pressure, dew point, heat index
-  C. Pollutant       : PM2.5, PM10, NO2, O3, CO, SO2 absolute values
-  D. Derived         : AQI change rate, rolling averages, lag features,
-                       heat index, wind chill, apparent_temp_delta
-  E. Target (labels) : next-hour AQI, next-day AQI category, AQI trend direction
-"""
 
 import json
 import math
