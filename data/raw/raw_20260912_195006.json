@@ -1,0 +1,258 @@
+{
+  "fetched_at_utc": "2026-09-12T19:50:06.891968+00:00",
+  "city": "Lahore",
+  "latitude": 31.5497,
+  "longitude": 74.3436,
+  "aqicn": {
+    "source": "aqicn",
+    "station": "Shanghai (\u4e0a\u6d77)",
+    "aqi": 59,
+    "dominant_pollutant": "pm25",
+    "pm25_iaqi": 59,
+    "pm10_iaqi": 25,
+    "no2_iaqi": 8.3,
+    "o3_iaqi": 38.2,
+    "co_iaqi": 5.5,
+    "so2_iaqi": 3.6,
+    "temperature_c": null,
+    "humidity_pct": null,
+    "pressure_hpa": null,
+    "wind_speed": null,
+    "forecast_pm25": [
+      {
+        "avg": 130,
+        "day": "2026-09-12",
+        "max": 177,
+        "min": 69
+      },
+      {
+        "avg": 139,
+        "day": "2026-09-13",
+        "max": 177,
+        "min": 92
+      },
+      {
+        "avg": 128,
+        "day": "2026-09-14",
+        "max": 177,
+        "min": 68
+      },
+      {
+        "avg": 132,
+        "day": "2026-09-15",
+        "max": 174,
+        "min": 42
+      },
+      {
+        "avg": 149,
+        "day": "2026-09-16",
+        "max": 177,
+        "min": 69
+      },
+      {
+        "avg": 151,
+        "day": "2026-09-17",
+        "max": 177,
+        "min": 87
+      },
+      {
+        "avg": 147,
+        "day": "2026-09-18",
+        "max": 160,
+        "min": 68
+      },
+      {
+        "avg": 131,
+        "day": "2026-09-19",
+        "max": 160,
+        "min": 69
+      }
+    ],
+    "forecast_o3": [
+      {
+        "avg": 1,
+        "day": "2025-04-05",
+        "max": 1,
+        "min": 1
+      }
+    ],
+    "forecast_uvi": [
+      {
+        "avg": 2,
+        "day": "2026-09-12",
+        "max": 9,
+        "min": 0
+      },
+      {
+        "avg": 1,
+        "day": "2026-09-13",
+        "max": 9,
+        "min": 0
+      },
+      {
+        "avg": 2,
+        "day": "2026-09-14",
+        "max": 8,
+        "min": 0
+      },
+      {
+        "avg": 2,
+        "day": "2026-09-15",
+        "max": 9,
+        "min": 0
+      },
+      {
+        "avg": 2,
+        "day": "2026-09-16",
+        "max": 8,
+        "min": 0
+      },
+      {
+        "avg": 1,
+        "day": "2026-09-17",
+        "max": 2,
+        "min": 0
+      }
+    ]
+  },
+  "openmeteo": {
+    "source": "open-meteo",
+    "current_temp_c": 29.2,
+    "current_wind_kmh": 4.9,
+    "current_wind_dir": 84,
+    "weathercode": 0,
+    "hourly_temp_c": 33.1,
+    "hourly_humidity": 54,
+    "apparent_temp_c": 37.8,
+    "precipitation_mm": 0.0,
+    "rain_mm": 0.0,
+    "windspeed_kmh": 3.2,
+    "winddir_deg": 3,
+    "windgusts_kmh": 5.8,
+    "uv_index": 0.0,
+    "visibility_m": 9240.0,
+    "pressure_hpa": 982.8,
+    "cloudcover_pct": 2,
+    "dewpoint_c": 22.5,
+    "hourly_temps": [
+      29.5,
+      29.1,
+      28.6,
+      28.2,
+      27.9,
+      27.6,
+      27.4,
+      28.5,
+      30.5,
+      32.4,
+      33.7,
+      34.7,
+      35.6,
+      36.2,
+      36.4,
+      35.9,
+      35.3,
+      34.5,
+      33.7,
+      33.1,
+      32.5,
+      31.7,
+      30.9,
+      30.3
+    ],
+    "hourly_winds": [
+      5.6,
+      4.8,
+      4.2,
+      4.0,
+      3.6,
+      3.3,
+      3.2,
+      2.8,
+      2.5,
+      1.8,
+      1.0,
+      0.4,
+      1.8,
+      3.0,
+      4.9,
+      7.7,
+      9.1,
+      8.4,
+      6.3,
+      3.2,
+      1.0,
+      3.7,
+      5.1,
+      3.5
+    ],
+    "hourly_humidity_arr": [
+      72,
+      73,
+      76,
+      78,
+      81,
+      83,
+      84,
+      79,
+      69,
+      59,
+      52,
+      50,
+      47,
+      43,
+      42,
+      43,
+      45,
+      47,
+      50,
+      54,
+      60,
+      61,
+      67,
+      70
+    ],
+    "daily": {
+      "time": [
+        "2026-09-13",
+        "2026-09-14",
+        "2026-09-15"
+      ],
+      "temperature_2m_max": [
+        36.4,
+        35.5,
+        33.9
+      ],
+      "temperature_2m_min": [
+        27.4,
+        27.3,
+        27.1
+      ],
+      "precipitation_sum": [
+        0.0,
+        0.3,
+        1.1
+      ],
+      "windspeed_10m_max": [
+        9.1,
+        7.5,
+        8.9
+      ],
+      "uv_index_max": [
+        7.15,
+        7.1,
+        6.3
+      ],
+      "sunrise": [
+        "2026-09-13T05:45",
+        "2026-09-14T05:45",
+        "2026-09-15T05:46"
+      ],
+      "sunset": [
+        "2026-09-13T18:11",
+        "2026-09-14T18:09",
+        "2026-09-15T18:08"
+      ]
+    }
+  }
+}
