@@ -1,0 +1,204 @@
+{
+  "fetched_at_utc": "2026-10-02T18:47:12.851085+00:00",
+  "city": "Lahore",
+  "latitude": 31.5497,
+  "longitude": 74.3436,
+  "aqicn": {
+    "source": "aqicn",
+    "station": "Shanghai (\u4e0a\u6d77)",
+    "aqi": 42,
+    "dominant_pollutant": "pm25",
+    "pm25_iaqi": 42,
+    "pm10_iaqi": 22,
+    "no2_iaqi": 6.4,
+    "o3_iaqi": 30.5,
+    "co_iaqi": 6.4,
+    "so2_iaqi": 4.1,
+    "temperature_c": 20,
+    "humidity_pct": 72,
+    "pressure_hpa": 1020,
+    "wind_speed": 1.5,
+    "forecast_pm25": [
+      {
+        "avg": 126,
+        "day": "2026-10-01",
+        "max": 174,
+        "min": 68
+      },
+      {
+        "avg": 205,
+        "day": "2026-10-02",
+        "max": 252,
+        "min": 157
+      },
+      {
+        "avg": 141,
+        "day": "2026-10-03",
+        "max": 174,
+        "min": 68
+      }
+    ],
+    "forecast_o3": [
+      {
+        "avg": 1,
+        "day": "2025-04-05",
+        "max": 1,
+        "min": 1
+      }
+    ],
+    "forecast_uvi": [
+      {
+        "avg": 1,
+        "day": "2026-10-01",
+        "max": 4,
+        "min": 0
+      },
+      {
+        "avg": 0,
+        "day": "2026-10-02",
+        "max": 1,
+        "min": 0
+      }
+    ]
+  },
+  "openmeteo": {
+    "source": "open-meteo",
+    "current_temp_c": 26.0,
+    "current_wind_kmh": 1.9,
+    "current_wind_dir": 151,
+    "weathercode": 0,
+    "hourly_temp_c": 31.6,
+    "hourly_humidity": 56,
+    "apparent_temp_c": 36.0,
+    "precipitation_mm": 0.0,
+    "rain_mm": 0.0,
+    "windspeed_kmh": 2.5,
+    "winddir_deg": 300,
+    "windgusts_kmh": 10.1,
+    "uv_index": 0.15,
+    "visibility_m": 10160.0,
+    "pressure_hpa": 987.8,
+    "cloudcover_pct": 2,
+    "dewpoint_c": 21.8,
+    "hourly_temps": [
+      26.5,
+      26.0,
+      25.6,
+      25.2,
+      24.8,
+      24.6,
+      23.4,
+      24.6,
+      26.8,
+      29.2,
+      30.8,
+      32.6,
+      33.4,
+      33.9,
+      34.1,
+      34.0,
+      33.5,
+      33.0,
+      31.6,
+      30.6,
+      28.8,
+      27.6,
+      27.0,
+      26.5
+    ],
+    "hourly_winds": [
+      0.8,
+      1.7,
+      2.1,
+      2.1,
+      1.9,
+      2.1,
+      2.9,
+      3.8,
+      3.1,
+      3.1,
+      1.8,
+      2.7,
+      3.9,
+      5.3,
+      6.0,
+      5.7,
+      4.4,
+      3.6,
+      2.5,
+      1.2,
+      3.9,
+      5.2,
+      4.4,
+      3.0
+    ],
+    "hourly_humidity_arr": [
+      73,
+      74,
+      76,
+      78,
+      80,
+      87,
+      92,
+      87,
+      81,
+      68,
+      61,
+      50,
+      47,
+      44,
+      43,
+      42,
+      45,
+      53,
+      56,
+      61,
+      68,
+      72,
+      74,
+      77
+    ],
+    "daily": {
+      "time": [
+        "2026-10-02",
+        "2026-10-03",
+        "2026-10-04"
+      ],
+      "temperature_2m_max": [
+        34.1,
+        34.7,
+        34.4
+      ],
+      "temperature_2m_min": [
+        23.4,
+        24.2,
+        23.9
+      ],
+      "precipitation_sum": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "windspeed_10m_max": [
+        6.0,
+        5.7,
+        5.9
+      ],
+      "uv_index_max": [
+        6.4,
+        6.4,
+        6.4
+      ],
+      "sunrise": [
+        "2026-10-02T05:56",
+        "2026-10-03T05:57",
+        "2026-10-04T05:57"
+      ],
+      "sunset": [
+        "2026-10-02T17:46",
+        "2026-10-03T17:45",
+        "2026-10-04T17:43"
+      ]
+    }
+  }
+}
